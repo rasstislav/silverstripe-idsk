@@ -1,0 +1,27 @@
+{
+    "name": "rasstislav/silverstripe-idsk",
+    "description": "ID-SK Frontend – Jednotný dizajn manuál elektronických služieb a webových sídiel.",
+    "type": "silverstripe-vendormodule",
+    "keywords": [
+        "silverstripe",
+        "idsk",
+        "frontend"
+
+    ],
+    "authors": [
+        {
+            "name": "Rastislav Brandobur",
+            "email": "rastislav.brandobur@gmail.com"
+        }
+    ],
+    "require": {
+        "silverstripe/framework": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rasstislav\\IdSk\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
