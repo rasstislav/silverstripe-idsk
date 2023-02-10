@@ -1,0 +1,6 @@
+---
+Name: idsk-extensions
+---
+SilverStripe\Forms\FormField:
+  extensions:
+    - Rasstislav\IdSk\Extensions\FormFieldExtension
