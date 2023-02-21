@@ -11,6 +11,27 @@ use SilverStripe\Forms\DateField;
 
 class FormFieldExtension extends Extension
 {
+    public function onBeforeRenderHolder($context, $properties)
+    {
+        if ($context->getMessageType() === 'required') {
+            $context->addExtraClass('govuk-form-group--error');
+
+            $context->setMessage(
+                $context->getMessage(),
+                'govuk-error-message',
+                $context->getMessageCast(),
+            );
+        }
+    }
+
+    public function onBeforeRender($context, $properties)
+    {
+        if ($context->getMessageType() === 'govuk-error-message') {
+            $context->addExtraClass('govuk-input--error');
+            $context->removeExtraClass('govuk-form-group--error');
+        }
+    }
+
     public function setDimension(DimensionEnum $case)
     {
         $this->owner->dimensionClass = $case->value;
