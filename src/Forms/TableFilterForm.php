@@ -48,6 +48,6 @@ class TableFilterForm extends Form
 
     public function isEmpty()
     {
-        return !count(array_filter($this->getData()));
+        return !count(array_filter($this->getData(), fn($value) => !is_null($value) && $value !== ''));
     }
 }
