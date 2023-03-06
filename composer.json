@@ -15,7 +15,8 @@
         }
     ],
     "require": {
-        "silverstripe/framework": "^4.0"
+        "silverstripe/framework": "^4.0",
+        "moo/template-tags": "^3.0"
     },
     "autoload": {
         "psr-4": {

@@ -5,6 +5,14 @@
 		</tr>
 	</thead>
 	<tbody class="idsk-table__body">
-		$Body
+		<% if $Body %>
+		    $Body
+		<% else_if $EmptyMessage %>
+			<% template 'Rasstislav/IdSk/Includes/Components/Table/TableRow' %>
+                <% set Cells %>
+                	<% include Rasstislav/IdSk/Includes/Components/Table/TableCell Value=$EmptyMessage %>
+                <% end_set %>
+            <% end_template %>
+		<% end_if %>
 	</tbody>
 </table>
