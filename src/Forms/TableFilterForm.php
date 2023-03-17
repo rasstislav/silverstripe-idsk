@@ -50,6 +50,17 @@ class TableFilterForm extends Form
 
     public function isEmpty()
     {
-        return !count(array_filter($this->getData(), fn($value) => !is_null($value) && $value !== ''));
+        $data = $this->getData();
+
+        foreach ($this->validationResult()->getMessages() as $message) {
+            unset($data[$message['fieldName']]);
+        }
+
+        return !array_filter($data, fn($value) => !is_null($value) && $value !== '');
+    }
+
+    public function loadMessagesFrom($result)
+    {
+        return $this;
     }
 }
