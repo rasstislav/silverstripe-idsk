@@ -21,7 +21,8 @@ class TableFilterForm extends Form
         if (!$actions) {
             $actions = new FieldList([
                 TableFilterFormAction::create('doFilter', _t(__CLASS__.'.GO', 'Filtrovať'))
-                    ->setUseButtonTag(true),
+                    ->setUseButtonTag(true)
+                    ->setName(null),
             ]);
         }
 
