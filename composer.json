@@ -14,8 +14,10 @@
         }
     ],
     "require": {
-        "silverstripe/framework": "^4.0",
-        "moo/template-tags": "^2.1"
+        "silverstripe/framework": "^4.0"
+    },
+    "suggest": {
+        "rasstislav/silverstripe-idsk-theme": "ID-SK Frontend theme"
     },
     "autoload": {
         "psr-4": {
