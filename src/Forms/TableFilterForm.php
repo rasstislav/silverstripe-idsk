@@ -29,6 +29,7 @@ class TableFilterForm extends Form
         parent::__construct($controller, $name, $fields, $actions, $validator);
 
         $this->setFormMethod('GET');
+        $this->setFormAction($controller?->Link());
         $this->disableSecurityToken(true);
     }
 
