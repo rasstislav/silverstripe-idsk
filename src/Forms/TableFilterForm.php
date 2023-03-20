@@ -16,7 +16,8 @@ class TableFilterForm extends Form
         $name = 'TableFilterForm',
         FieldList $fields = null,
         FieldList $actions = null,
-        Validator $validator = null
+        Validator $validator = null,
+        $loadDataFromGetParameters = true,
     ) {
         if (!$actions) {
             $actions = new FieldList([
@@ -31,6 +32,10 @@ class TableFilterForm extends Form
         $this->setFormMethod('GET');
         $this->setFormAction($controller?->Link());
         $this->disableSecurityToken(true);
+
+        if ($loadDataFromGetParameters) {
+            $this->loadDataFrom($this->getRequest()->getVars(), parent::MERGE_AS_INTERNAL_VALUE);
+        }
     }
 
     public function getLegend()
