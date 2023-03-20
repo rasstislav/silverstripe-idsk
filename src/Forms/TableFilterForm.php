@@ -18,6 +18,7 @@ class TableFilterForm extends Form
         FieldList $actions = null,
         Validator $validator = null,
         $loadDataFromGetParameters = true,
+        $fixIncorrectData = true,
     ) {
         if (!$actions) {
             $actions = new FieldList([
@@ -34,7 +35,19 @@ class TableFilterForm extends Form
         $this->disableSecurityToken(true);
 
         if ($loadDataFromGetParameters) {
+            $defaultData = $fixIncorrectData ? $this->getData() : [];
+
             $this->loadDataFrom($this->getRequest()->getVars(), parent::MERGE_AS_INTERNAL_VALUE);
+
+            if ($fixIncorrectData) {
+                $loadedData = $this->getData();
+
+                foreach ($this->validationResult()->getMessages() as $errors) {
+                    $loadedData[$fieldName = $errors['fieldName']] = $defaultData[$fieldName];
+                }
+
+                $this->loadDataFrom($loadedData, parent::MERGE_AS_INTERNAL_VALUE);
+            }
         }
     }
 
@@ -56,13 +69,7 @@ class TableFilterForm extends Form
 
     public function isEmpty()
     {
-        $data = $this->getData();
-
-        foreach ($this->validationResult()->getMessages() as $message) {
-            unset($data[$message['fieldName']]);
-        }
-
-        return !array_filter($data, fn($value) => !is_null($value) && $value !== '');
+        return !array_filter($this->getData(), fn($value) => !is_null($value) && $value !== '');
     }
 
     public function loadMessagesFrom($result)
