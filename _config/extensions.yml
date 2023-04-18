@@ -4,3 +4,14 @@ Name: idsk-extensions
 SilverStripe\Forms\FormField:
   extensions:
     - Rasstislav\IdSk\Extensions\FormFieldExtension
+---
+Only:
+  moduleexists: silverstripe/cms
+---
+SilverStripe\CMS\Model\SiteTree:
+  extensions:
+    - Rasstislav\IdSk\Extensions\SiteTreeExtension
+
+SilverStripe\CMS\Controllers\ContentController:
+  extensions:
+    - Rasstislav\IdSk\Extensions\ContentControllerExtension
