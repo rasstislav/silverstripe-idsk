@@ -17,7 +17,9 @@
         "silverstripe/framework": "^4.0"
     },
     "suggest": {
-        "rasstislav/silverstripe-idsk-theme": "ID-SK Frontend theme"
+        "rasstislav/silverstripe-idsk-theme": "ID-SK Frontend theme",
+        "silverstripe/blog": "The blog module allows you to post blogs on your SilverStripe.",
+        "jonom/focuspoint": "Smarter automatic image cropping for SilverStripe."
     },
     "autoload": {
         "psr-4": {

@@ -1,0 +1,7 @@
+---
+Name: idsk-blog-config
+Only:
+  moduleexists: silverstripe/blog
+---
+SilverStripe\Blog\Model\BlogController:
+  disable_profiles: true
