@@ -2,3 +2,6 @@ sk:
   SilverStripe\CMS\Search\SearchForm:
     SEARCH: Zadajte hľadaný výraz
     GO: Vyhľadať
+  Rasstislav\IdSk\Forms\IntroBlockSearchForm:
+    SEARCH: Zadajte hľadaný výraz
+    GO: Vyhľadávanie
