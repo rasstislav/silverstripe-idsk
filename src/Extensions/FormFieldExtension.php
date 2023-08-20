@@ -8,12 +8,16 @@ use Rasstislav\IdSk\Enums\DimensionEnum;
 use SilverStripe\i18n\i18n;
 use SilverStripe\Core\Extension;
 use SilverStripe\Forms\DateField;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\FileField;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\TextField;
 
 class FormFieldExtension extends Extension
 {
     public function onBeforeRenderHolder($context, $properties)
     {
-        if ($context->getMessageType() === 'required') {
+        if (in_array($context->getMessageType(), ['required', 'validation'], true)) {
             $context->addExtraClass('govuk-form-group--error');
 
             $context->setMessage(
@@ -27,7 +31,16 @@ class FormFieldExtension extends Extension
     public function onBeforeRender($context, $properties)
     {
         if ($context->getMessageType() === 'govuk-error-message') {
-            $context->addExtraClass('govuk-input--error');
+            if ($context instanceof TextField) {
+                $context->addExtraClass('govuk-input--error');
+            } elseif ($context instanceof TextareaField) {
+                $context->addExtraClass('govuk-textarea--error');
+            } elseif ($context instanceof DropdownField) {
+                $context->addExtraClass('govuk-select--error');
+            } elseif ($context instanceof FileField) {
+                $context->addExtraClass('govuk-file-upload--error');
+            }
+
             $context->removeExtraClass('govuk-form-group--error');
         }
     }
@@ -55,5 +68,10 @@ class FormFieldExtension extends Extension
         }
 
         return $value;
+    }
+
+    public function getReferenceID()
+    {
+        return $this->owner->ID();
     }
 }

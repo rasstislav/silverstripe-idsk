@@ -5,3 +5,13 @@ Only:
 ---
 SilverStripe\Blog\Model\BlogController:
   disable_profiles: true
+---
+Name: idsk-userforms-config
+Only:
+  moduleexists: silverstripe/userforms
+---
+SilverStripe\UserForms\Model\UserDefinedForm:
+  controller_name: Rasstislav\IdSk\Control\UserDefinedFormController
+  block_default_userforms_css: true
+  block_default_userforms_js: true
+  enable_are_you_sure: false

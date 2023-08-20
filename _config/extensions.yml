@@ -1,9 +1,18 @@
 ---
 Name: idsk-extensions
 ---
+SilverStripe\Forms\Form:
+  extensions:
+    - Rasstislav\IdSk\Extensions\FormExtension
 SilverStripe\Forms\FormField:
   extensions:
     - Rasstislav\IdSk\Extensions\FormFieldExtension
+SilverStripe\Forms\CheckboxSetField:
+  extensions:
+    - Rasstislav\IdSk\Extensions\CheckboxSetFieldExtension
+SilverStripe\Forms\OptionsetField:
+  extensions:
+    - Rasstislav\IdSk\Extensions\OptionsetFieldExtension
 ---
 Only:
   moduleexists: silverstripe/cms
@@ -43,3 +52,14 @@ Only:
 SilverStripe\Assets\Storage\DBFile:
   extensions:
     - Rasstislav\IdSk\Extensions\RemoveImageDimensionsExtension
+---
+Name: idsk-userforms-extensions
+Only:
+  moduleexists: silverstripe/userforms
+---
+SilverStripe\UserForms\Model\EditableFormField\EditableTextField:
+  extensions:
+    - Rasstislav\IdSk\Extensions\EditableTextFieldExtension
+SilverStripe\UserForms\Model\UserDefinedForm:
+  extensions:
+    - Rasstislav\IdSk\Extensions\UserDefinedFormExtension
