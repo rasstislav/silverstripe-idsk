@@ -6,6 +6,10 @@ use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Core\Extension;
 use SilverStripe\ORM\ArrayList;
 
+if (!class_exists(SiteTree::class)) {
+    return;
+}
+
 class ContentControllerExtension extends Extension
 {
     public function FooterMenu()

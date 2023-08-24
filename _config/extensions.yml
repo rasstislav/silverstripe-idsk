@@ -14,13 +14,13 @@ SilverStripe\Forms\OptionsetField:
   extensions:
     - Rasstislav\IdSk\Extensions\OptionsetFieldExtension
 ---
+Name: idsk-cms-extensions
 Only:
   moduleexists: silverstripe/cms
 ---
 SilverStripe\CMS\Model\SiteTree:
   extensions:
     - Rasstislav\IdSk\Extensions\SiteTreeExtension
-
 SilverStripe\CMS\Controllers\ContentController:
   extensions:
     - Rasstislav\IdSk\Extensions\ContentControllerExtension
@@ -40,7 +40,6 @@ Only:
 SilverStripe\Blog\Model\Blog:
   extensions:
     - Rasstislav\IdSk\Extensions\BlogExtension
-
 SilverStripe\Blog\Model\BlogPost:
   extensions:
     - Rasstislav\IdSk\Extensions\BlogPostExtension
