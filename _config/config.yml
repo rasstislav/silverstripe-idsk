@@ -1,4 +1,10 @@
 ---
+Name: idsk-config
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Forms\TextareaField:
+    class: Rasstislav\IdSk\Forms\TextareaField
+---
 Name: idsk-blog-config
 Only:
   moduleexists: silverstripe/blog
