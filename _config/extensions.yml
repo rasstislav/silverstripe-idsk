@@ -13,6 +13,12 @@ SilverStripe\Forms\CheckboxSetField:
 SilverStripe\Forms\OptionsetField:
   extensions:
     - Rasstislav\IdSk\Extensions\OptionsetFieldExtension
+SilverStripe\Assets\Storage\DBFile:
+  extensions:
+    - Rasstislav\IdSk\Extensions\ImageManipulationExtension
+SilverStripe\Assets\Image:
+  extensions:
+    - Rasstislav\IdSk\Extensions\ImageManipulationExtension
 ---
 Name: idsk-cms-extensions
 Only:
@@ -43,14 +49,6 @@ SilverStripe\Blog\Model\Blog:
 SilverStripe\Blog\Model\BlogPost:
   extensions:
     - Rasstislav\IdSk\Extensions\BlogPostExtension
----
-Name: idsk-focuspoint-extensions
-Only:
-  moduleexists: jonom/focuspoint
----
-SilverStripe\Assets\Storage\DBFile:
-  extensions:
-    - Rasstislav\IdSk\Extensions\RemoveImageDimensionsExtension
 ---
 Name: idsk-userforms-extensions
 Only:
