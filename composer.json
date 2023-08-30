@@ -21,7 +21,8 @@
         "rasstislav/silverstripe-idsk-theme": "ID-SK Frontend theme",
         "silverstripe/blog": "The blog module allows you to post blogs on your SilverStripe.",
         "jonom/focuspoint": "Smarter automatic image cropping for SilverStripe.",
-        "silverstripe/userforms": "UserForms enables CMS users to create dynamic forms via a drag and drop interface and without getting involved in any PHP code."
+        "silverstripe/userforms": "UserForms enables CMS users to create dynamic forms via a drag and drop interface and without getting involved in any PHP code.",
+        "gorriecoe/silverstripe-linkfield": "Adds a link field, e.g. for a back link."
     },
     "autoload": {
         "psr-4": {
