@@ -15,3 +15,11 @@ SilverStripe\UserForms\Model\UserDefinedForm:
   block_default_userforms_css: true
   block_default_userforms_js: true
   enable_are_you_sure: false
+---
+Name: idsk-fluent-config
+Only:
+  moduleexists: tractorcow/silverstripe-fluent
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\CMS\Search\SearchForm:
+    class: TractorCow\Fluent\Search\FluentSearchForm
