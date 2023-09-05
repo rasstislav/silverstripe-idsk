@@ -25,6 +25,11 @@
         "gorriecoe/silverstripe-linkfield": "Adds a link field, e.g. for a back link.",
         "tractorcow/silverstripe-fluent": "Simple localisation for Silverstripe."
     },
+    "extra": {
+        "expose": [
+            "client/dist"
+        ]
+    },
     "autoload": {
         "psr-4": {
             "Rasstislav\\IdSk\\": "src/"

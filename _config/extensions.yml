@@ -1,6 +1,9 @@
 ---
 Name: idsk-extensions
 ---
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - Rasstislav\IdSk\Extensions\SiteConfigExtension
 SilverStripe\Forms\Form:
   extensions:
     - Rasstislav\IdSk\Extensions\FormExtension
