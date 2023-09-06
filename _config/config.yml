@@ -23,3 +23,15 @@ Only:
 SilverStripe\Core\Injector\Injector:
   SilverStripe\CMS\Search\SearchForm:
     class: TractorCow\Fluent\Search\FluentSearchForm
+---
+Name: idsk-nocaptcha-config
+Only:
+  moduleexists: undefinedoffset/silverstripe-nocaptcha
+---
+SilverStripe\SpamProtection\Extension\FormSpamProtectionExtension:
+  default_spam_protector: UndefinedOffset\NoCaptcha\Forms\NocaptchaProtector
+SilverStripe\Core\Injector\Injector:
+  UndefinedOffset\NoCaptcha\Forms\NocaptchaField:
+    properties:
+      SiteKey: '`SS_NOCAPTCHA_SITE_KEY`'
+      SecretKey: '`SS_NOCAPTCHA_SECRET_KEY`'

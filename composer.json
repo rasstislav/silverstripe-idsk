@@ -23,7 +23,8 @@
         "jonom/focuspoint": "Smarter automatic image cropping for SilverStripe.",
         "silverstripe/userforms": "UserForms enables CMS users to create dynamic forms via a drag and drop interface and without getting involved in any PHP code.",
         "gorriecoe/silverstripe-linkfield": "Adds a link field, e.g. for a back link.",
-        "tractorcow/silverstripe-fluent": "Simple localisation for Silverstripe."
+        "tractorcow/silverstripe-fluent": "Simple localisation for Silverstripe.",
+        "undefinedoffset/silverstripe-nocaptcha": "A spam protector and form field using Google's reCAPTCHA v2 or optionally a foundation v3 implementation"
     },
     "extra": {
         "expose": [
