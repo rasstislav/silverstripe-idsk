@@ -9,6 +9,7 @@ use SilverStripe\Forms\Validator;
 
 class TableFilterForm extends Form
 {
+    protected $expanded = false;
     protected $expandFormOnEmptyData = true;
 
     public function __construct(
@@ -54,6 +55,17 @@ class TableFilterForm extends Form
     public function getLegend()
     {
         return $this->legend ?: 'Filtrovať obsah';
+    }
+
+    public function setIsExpanded($bool)
+    {
+        $this->expanded = (bool)$bool;
+        return $this;
+    }
+
+    public function isExpanded()
+    {
+        return $this->expanded;
     }
 
     public function setExpandFormOnEmptyData($bool)
