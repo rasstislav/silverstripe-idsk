@@ -1,0 +1,20 @@
+---
+Name: idsk-fluent-config
+Only:
+  moduleexists: tractorcow/silverstripe-fluent
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\CMS\Search\SearchForm:
+    class: TractorCow\Fluent\Search\FluentSearchForm
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - TractorCow\Fluent\Extension\FluentExtension
+  translate:
+    - Title
+    - Tagline
+    - CookiesBannerHeading
+    - CookiesBannerText
+    - CookiesBannerAcceptButtonTitle
+    - CookiesBannerRejectButtonTitle
+    - CookiesBannerAccepted
+    - CookiesBannerRejected
