@@ -22,6 +22,9 @@ SilverStripe\Assets\Storage\DBFile:
 SilverStripe\Assets\Image:
   extensions:
     - Rasstislav\IdSk\Extensions\ImageManipulationExtension
+SilverStripe\Assets\File:
+  extensions:
+    - Rasstislav\IdSk\Extensions\FileExtension
 ---
 Name: idsk-cms-extensions
 Only:
