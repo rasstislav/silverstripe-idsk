@@ -17,7 +17,7 @@ class FileExtension extends Extension
             $template = 'DBFile_pdf';
         }
 
-        return $this->owner->renderWith($template, [
+        return $this->owner->renderWith("{$template}_preview", [
             'ShowTitle' => $showTitle,
             'RemoveBottomMargin' => $removeBottomMargin,
         ]);
