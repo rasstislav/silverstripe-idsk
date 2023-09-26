@@ -44,7 +44,7 @@ class BlogPostExtension extends DataExtension
         );
     }
 
-    public function getInPageNavigationListItemsData()
+    public function getNavigationItems()
     {
         $items = new ArrayList();
 
