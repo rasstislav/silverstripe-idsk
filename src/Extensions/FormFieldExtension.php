@@ -17,7 +17,7 @@ class FormFieldExtension extends Extension
 {
     public function onBeforeRenderHolder($context, $properties)
     {
-        if (in_array($context->getMessageType(), ['required', 'validation'], true)) {
+        if (in_array($context->getMessageType(), ['required', 'validation', 'error'], true)) {
             $context->addExtraClass('govuk-form-group--error');
 
             $context->setMessage(
