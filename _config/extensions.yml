@@ -19,6 +19,9 @@ SilverStripe\Forms\OptionsetField:
 SilverStripe\Assets\Storage\DBFile:
   extensions:
     - Rasstislav\IdSk\Extensions\ImageManipulationExtension
+SilverStripe\Forms\FormAction:
+  extensions:
+    - Rasstislav\IdSk\Extensions\FormActionExtension
 SilverStripe\Assets\Image:
   extensions:
     - Rasstislav\IdSk\Extensions\ImageManipulationExtension
@@ -66,3 +69,6 @@ SilverStripe\UserForms\Model\EditableFormField\EditableTextField:
 SilverStripe\UserForms\Model\UserDefinedForm:
   extensions:
     - Rasstislav\IdSk\Extensions\UserDefinedFormExtension
+SilverStripe\UserForms\Form\UserForm:
+  extensions:
+    - Rasstislav\IdSk\Extensions\UserFormExtension
