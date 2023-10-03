@@ -1,4 +1,10 @@
 ---
+Name: idsk-config
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Forms\HTMLEditor\TinyMCEConfig:
+    class: Rasstislav\IdSk\TinyMCEConfig
+---
 Name: idsk-blog-config
 Only:
   moduleexists: silverstripe/blog

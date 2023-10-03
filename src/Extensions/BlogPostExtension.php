@@ -2,6 +2,7 @@
 
 namespace Rasstislav\IdSk\Extensions;
 
+use Rasstislav\IdSk\TinyMCEConfig;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\ArrayList;
@@ -38,6 +39,9 @@ class BlogPostExtension extends DataExtension
 
     public function updateCMSFields(FieldList $fields)
     {
+        TinyMCEConfig::get('cms')
+            ->setMode($fields->dataFieldByName('Summary'), TinyMCEConfig::MODE_BASIC);
+
         $fields->insertAfter(
             'FeaturedImage',
             new CheckboxField('ShowFeaturedImage', $this->owner->fieldLabel('ShowFeaturedImage')),

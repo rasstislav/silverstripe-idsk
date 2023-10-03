@@ -2,6 +2,7 @@
 
 namespace Rasstislav\IdSk\Extensions;
 
+use Rasstislav\IdSk\TinyMCEConfig;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Forms\Tab;
 use SilverStripe\Forms\FieldList;
@@ -44,7 +45,7 @@ class SiteConfigExtension extends DataExtension
                 ->setTitle($this->owner->fieldLabel('CookiesBanner')),
             $this->owner->dbObject('CookiesBannerHeading')->scaffoldFormField()
                 ->setTitle($this->owner->fieldLabel('CookiesBannerHeading')),
-            $this->owner->dbObject('CookiesBannerText')->scaffoldFormField()
+            $cookiesBannerTextField = $this->owner->dbObject('CookiesBannerText')->scaffoldFormField()
                 ->setTitle($this->owner->fieldLabel('CookiesBannerText'))
                 ->setRows(3),
             $this->owner->dbObject('CookiesBannerButtons')->scaffoldFormField()
@@ -53,13 +54,19 @@ class SiteConfigExtension extends DataExtension
                 ->setTitle($this->owner->fieldLabel('CookiesBannerAcceptButtonTitle')),
             $this->owner->dbObject('CookiesBannerRejectButtonTitle')->scaffoldFormField()
                 ->setTitle($this->owner->fieldLabel('CookiesBannerRejectButtonTitle')),
-            $this->owner->dbObject('CookiesBannerAccepted')->scaffoldFormField()
+            $cookiesBannerAcceptedField = $this->owner->dbObject('CookiesBannerAccepted')->scaffoldFormField()
                 ->setTitle($this->owner->fieldLabel('CookiesBannerAccepted'))
                 ->setRows(3),
-            $this->owner->dbObject('CookiesBannerRejected')->scaffoldFormField()
+            $cookiesBannerRejectedField = $this->owner->dbObject('CookiesBannerRejected')->scaffoldFormField()
                 ->setTitle($this->owner->fieldLabel('CookiesBannerRejected'))
                 ->setRows(3),
             TreeDropdownField::create('CookiesPageID', $this->owner->fieldLabel('CookiesPage'), SiteTree::class),
         ), 'Access');
+
+        $tinyMCEConfig = TinyMCEConfig::get('cms');
+
+        $tinyMCEConfig->setMode($cookiesBannerTextField, TinyMCEConfig::MODE_MINIMAL);
+        $tinyMCEConfig->setMode($cookiesBannerAcceptedField, TinyMCEConfig::MODE_MINIMAL);
+        $tinyMCEConfig->setMode($cookiesBannerRejectedField, TinyMCEConfig::MODE_MINIMAL);
     }
 }
