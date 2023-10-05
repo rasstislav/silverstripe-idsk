@@ -12,6 +12,8 @@ SilverStripe\SiteConfig\SiteConfig:
   translate:
     - Title
     - Tagline
+    - HeaderLogoID
+    - FooterLogoID
     - CookiesBannerHeading
     - CookiesBannerText
     - CookiesBannerAcceptButtonTitle
