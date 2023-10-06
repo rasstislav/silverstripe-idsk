@@ -23,6 +23,10 @@ class SiteConfigExtension extends DataExtension
         'CookiesBannerRejectButtonTitle' => 'Varchar(55)',
         'CookiesBannerAccepted' => 'HTMLText',
         'CookiesBannerRejected' => 'HTMLText',
+        'FacebookURL' => 'Varchar(2083)',
+        'LinkedinURL' => 'Varchar(2083)',
+        'TwitterURL' => 'Varchar(2083)',
+        'InstagramURL' => 'Varchar(2083)',
     ];
 
     private static $has_one = [
@@ -48,6 +52,10 @@ class SiteConfigExtension extends DataExtension
         'CookiesBannerAccepted' => 'Text po prijatí cookies',
         'CookiesBannerRejected' => 'Text po odmietnutí cookies',
         'CookiesPage' => 'Stránka s nastaveniami cookies',
+        'FacebookURL' => 'Odkaz na Facebook',
+        'LinkedinURL' => 'Odkaz na LinkedIn',
+        'TwitterURL' => 'Odkaz na Twitter',
+        'InstagramURL' => 'Odkaz na Instagram',
     ];
 
     public function updateCMSFields(FieldList $fields) {
@@ -86,10 +94,30 @@ class SiteConfigExtension extends DataExtension
                 ->setTitle($this->owner->fieldLabel('FooterLogo')),
         ), 'Access');
 
+        $fields->insertBefore(Tab::create('Social', 'Sociálne siete',
+            $this->owner->dbObject('FacebookURL')->scaffoldFormField()
+                ->setTitle($this->owner->fieldLabel('FacebookURL')),
+            $this->owner->dbObject('LinkedinURL')->scaffoldFormField()
+                ->setTitle($this->owner->fieldLabel('LinkedinURL')),
+            $this->owner->dbObject('TwitterURL')->scaffoldFormField()
+                ->setTitle($this->owner->fieldLabel('TwitterURL')),
+            $this->owner->dbObject('InstagramURL')->scaffoldFormField()
+                ->setTitle($this->owner->fieldLabel('InstagramURL')),
+        ), 'Access');
+
         $tinyMCEConfig = TinyMCEConfig::get('cms');
 
         $tinyMCEConfig->setMode($cookiesBannerTextField, TinyMCEConfig::MODE_MINIMAL);
         $tinyMCEConfig->setMode($cookiesBannerAcceptedField, TinyMCEConfig::MODE_MINIMAL);
         $tinyMCEConfig->setMode($cookiesBannerRejectedField, TinyMCEConfig::MODE_MINIMAL);
+    }
+
+    public function hasSocialNetworks()
+    {
+        return $this->owner->FacebookURL
+            || $this->owner->LinkedinURL
+            || $this->owner->TwitterURL
+            || $this->owner->InstagramURL
+        ;
     }
 }
