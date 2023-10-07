@@ -7,7 +7,7 @@ use SilverStripe\Core\Extension;
 
 class FileExtension extends Extension
 {
-    public function preview(bool $showTitle = false, bool $removeBottomMargin = true)
+    public function preview(string $title = '', bool $removeBottomMargin = true)
     {
         if (!$template = $this->owner->File->getFrontendTemplate()) {
             return '';
@@ -17,9 +17,15 @@ class FileExtension extends Extension
             $template = 'DBFile_pdf';
         }
 
-        return $this->owner->renderWith("{$template}_preview", [
-            'ShowTitle' => $showTitle,
+        $data = [
+            'ShowTitle' => !!$title,
             'RemoveBottomMargin' => $removeBottomMargin,
-        ]);
+        ];
+
+        if ($title) {
+            $data['Title'] = $title;
+        }
+
+        return $this->owner->renderWith("{$template}_preview", $data);
     }
 }
