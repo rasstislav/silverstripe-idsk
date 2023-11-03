@@ -4,8 +4,10 @@ Only:
   moduleexists: tractorcow/silverstripe-fluent
 ---
 SilverStripe\Core\Injector\Injector:
+  TractorCow\Fluent\Extension\FluentSiteTreeExtension:
+    class: Rasstislav\IdSk\Extensions\FluentSiteTreeExtension
   SilverStripe\CMS\Search\SearchForm:
-    class: TractorCow\Fluent\Search\FluentSearchForm
+    class: Rasstislav\IdSk\Forms\Search\FluentSearchForm
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - TractorCow\Fluent\Extension\FluentExtension

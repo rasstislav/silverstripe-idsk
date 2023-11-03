@@ -2,6 +2,8 @@
 Name: idsk-config
 ---
 SilverStripe\Core\Injector\Injector:
+  SilverStripe\CMS\Search\ContentControllerSearchExtension:
+    class: Rasstislav\IdSk\Extensions\ContentControllerSearchExtension
   SilverStripe\Forms\HTMLEditor\TinyMCEConfig:
     class: Rasstislav\IdSk\TinyMCEConfig
 ---

@@ -1,6 +1,8 @@
 <?php
 
 use Rasstislav\IdSk\TinyMCEConfig;
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\ORM\Search\FulltextSearchable;
 use SilverStripe\View\Requirements;
 
 Requirements::set_force_js_to_bottom(true);
@@ -49,3 +51,6 @@ $editorConfig
     ->addInvalidElements('pre', 'address')
     ->addInvalidElements('map', 'area')
 ;
+
+/* Fulltext search */
+FulltextSearchable::enable([SiteTree::class]);

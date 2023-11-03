@@ -1,6 +1,9 @@
 ---
 Name: idsk-extensions
 ---
+SilverStripe\CMS\Search\SearchForm:
+  extensions:
+    - Rasstislav\IdSk\Extensions\SearchFormExtension
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - Rasstislav\IdSk\Extensions\SiteConfigExtension
