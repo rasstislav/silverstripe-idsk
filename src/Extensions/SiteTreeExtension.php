@@ -18,6 +18,10 @@ class SiteTreeExtension extends DataExtension
         'BackLink' => Link::class,
     ];
 
+    private static $cascade_duplicates = [
+        'BackLink',
+    ];
+
     private static $field_labels = [
         'ShowInFooter' => 'Zobraziť v pätičke?',
         'BackLink' => 'Tlačidlo späť',
