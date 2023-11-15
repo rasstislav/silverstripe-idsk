@@ -1,0 +1,9 @@
+---
+Name: idsk-routes
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    'api/feedback//$Action': 'Rasstislav\IdSk\Controllers\ApiFeedbackController'
