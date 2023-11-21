@@ -32,7 +32,7 @@ class Feedback extends DataObject
     private static $searchable_fields = [
         'Type',
         'Output',
-        'PageID',
+        'PageID' => 'ExactMatchFilter',
     ];
 
     private static $field_labels = [
